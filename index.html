@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT Systems & Security Administrator specializing in Identity & Endpoint Security, Zero Trust Architecture, and Microsoft Security Stack">
+    <title>Security Engineer Portfolio | Identity & Endpoint Security Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#1e293b',
+                        accent: '#06b6d4',
+                        accentHover: '#0891b2',
+                        muted: '#64748b',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        
+        /* Gradient text utility */
+        .text-gradient {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Terminal cursor effect */
+        .cursor-blink::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+            color: #06b6d4;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        /* Hover card effect */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.3);
+        }
+        
+        /* Security grid background */
+        .bg-grid {
+            background-image: linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="bg-primary text-slate-300 font-sans antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-mono text-accent font-bold text-xl tracking-tighter">
+  Abhishek Choudhary
+</span>
+
+
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-accent transition-colors duration-300 text-sm font-medium">About</a>
+                        <a href="#skills" class="hover:text-accent transition-colors duration-300 text-sm font-medium">Skills</a>
+                        <a href="#projects" class="hover:text-accent transition-colors duration-300 text-sm font-medium">Projects</a>
+                        <a href="#certifications" class="hover:text-accent transition-colors duration-300 text-sm font-medium">Certifications</a>
+                        <a href="#contact" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-accent hover:bg-slate-800">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:text-accent hover:bg-slate-800">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:text-accent hover:bg-slate-800">Projects</a>
+                <a href="#certifications" class="block px-3 py-2 rounded-md text-base font-medium hover:text-accent hover:bg-slate-800">Certifications</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-grid overflow-hidden pt-16">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-100 h-100 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <p class="font-mono text-accent mb-4 text-sm tracking-widest uppercase"> System & Security Administrator
+</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                    Securing Identities.<br>
+                    <span class="text-gradient">Protecting Endpoints.</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400 leading-relaxed">
+                    IT Systems Administrator transitioning into security engineering. 
+                    Specialized in <span class="text-white font-semibold">Microsoft Entra ID</span>, 
+                    <span class="text-white font-semibold">Zero Trust Architecture</span>, and 
+                    <span class="text-white font-semibold">Enterprise Endpoint Management</span>.
+                </p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="px-8 py-4 bg-accent hover:bg-accentHover text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 flex items-center gap-2">
+                        View Projects
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border border-slate-700 hover:border-accent text-white rounded-lg font-semibold transition-all duration-300 hover:bg-slate-800">
+                        Get in Touch
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto border-t border-slate-800 pt-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">1.5+</div>
+                        <div class="text-sm text-slate-500 mt-1">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">50+</div>
+                        <div class="text-sm text-slate-500 mt-1">Endpoints Managed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">99.9%</div>
+                        <div class="text-sm text-slate-500 mt-1">Uptime Maintained</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">3</div>
+                        <div class="text-sm text-slate-500 mt-1">Active Labs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-secondary/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">About Me</h2>
+                    <div class="space-y-4 text-slate-400 leading-relaxed">
+                        <p>
+                            I'm <strong class="text-white">Abhishek Choudhary</strong> an IT Systems & Security Administrator with hands-on experience in enterprise identity and endpoint security. 
+                            My focus is on implementing <strong class="text-white">Zero Trust principles</strong> using Microsoft security stack 
+                            and modern endpoint management solutions.
+                        </p>
+                        <p>
+                            Currently, I'm transitioning into a dedicated Identity & Endpoint Security Engineering role, leveraging my 
+                            practical experience with <strong class="text-white">Microsoft Entra ID, Intune, and Conditional Access</strong> 
+                            to design secure, scalable access architectures.
+                        </p>
+                        <p>
+                            I believe in learning by doing. My home lab environment—running Ubuntu VMs, FreeRADIUS, and simulated enterprise 
+                            scenarios—keeps my skills sharp and ready for real-world security challenges.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm text-slate-300">Zero Trust Advocate</span>
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm text-slate-300">Automation Focused</span>
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm text-slate-300">Continuous Learner</span>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-2xl blur-2xl"></div>
+                    <div class="relative glass rounded-2xl p-8 border border-slate-700">
+                        <div class="font-mono text-sm text-slate-500 mb-4"> Current Focus</div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-accent rounded-full mt-2 animate-pulse"></div>
+                                <div>
+                                    <div class="text-white font-medium">Identity Security Engineering</div>
+                                    <div class="text-slate-500 text-sm">Entra ID, Conditional Access, RBAC design</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-accent rounded-full mt-2 animate-pulse" style="animation-delay: 0.2s"></div>
+                                <div>
+                                    <div class="text-white font-medium">Endpoint Security Architecture</div>
+                                    <div class="text-slate-500 text-sm">Intune, compliance policies, threat protection</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-accent rounded-full mt-2 animate-pulse" style="animation-delay: 0.4s"></div>
+                                <div>
+                                    <div class="text-white font-medium">Network Security</div>
+                                    <div class="text-slate-500 text-sm">Firewall management, VPN, segmentation</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                <div>
+                                    <div class="text-white font-medium">Security Operations</div>
+                                    <div class="text-slate-500 text-sm">Incident response, monitoring, hardening</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-primary">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Core Technical Skills</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Hands-on expertise across the security stack, from identity management to endpoint protection</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Identity & Access -->
+                <div class="glass rounded-xl p-6 hover-lift border border-slate-800">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-3">Identity & Access</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Microsoft Entra ID (Azure AD)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Conditional Access Policies
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            MFA Implementation
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            Active Directory (ADDS)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            SSO/SAML Configuration
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Endpoint Security -->
+                <div class="glass rounded-xl p-6 hover-lift border border-slate-800">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-3">Endpoint Security</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                            Microsoft Intune
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                            Device Compliance Policies
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                            Endpoint Protection (Seqrite)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                            Bitdefender Management
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                            Patch Management
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Network Security -->
+                <div class="glass rounded-xl p-6 hover-lift border border-slate-800">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-3">Network Security</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                            Sophos Firewall Management
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                            VPN Configuration (IPsec/SSL)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                            DNS & DHCP Administration
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                            TCP/IP Troubleshooting
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                            Network Segmentation
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Security Operations -->
+                <div class="glass rounded-xl p-6 hover-lift border border-slate-800">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-3">Security Ops</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            Microsoft 365 Security
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            Security Incident Response
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            Vulnerability Assessment
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            Security Hardening
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            Log Analysis & Monitoring
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tools & Platforms -->
+            <div class="mt-12 glass rounded-xl p-8 border border-slate-800">
+                <h3 class="text-white font-semibold mb-6 text-center">Tools & Platforms</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Microsoft 365</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Entra ID</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Intune</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Sophos XG</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">PowerShell</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Ubuntu Server</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">FreeRADIUS</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Active Directory</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Seqrite</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 text-sm border border-slate-700 hover:border-accent transition-colors">Bitdefender</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-secondary/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Projects & Labs</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Practical implementations demonstrating security architecture and engineering capabilities</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: FreeRADIUS Lab -->
+                <div class="glass rounded-xl overflow-hidden border border-slate-800 hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="font-mono text-6xl text-slate-700 group-hover:text-accent/20 transition-colors">RADIUS</div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full border border-accent/30">Lab Environment</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Enterprise AAA Infrastructure</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            Designed and deployed a comprehensive Authentication, Authorization, and Accounting (AAA) solution using FreeRADIUS on Ubuntu Server. Implemented 802.1X network access control with certificate-based authentication, simulating enterprise-grade NAC deployment for wired and wireless networks.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">FreeRADIUS</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Ubuntu Server</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">802.1X</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">EAP-TLS</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <span class="text-xs text-slate-500">Infrastructure Security</span>
+                            <button onclick="showProjectDetails('radius')" class="text-accent hover:text-accentHover text-sm font-medium flex items-center gap-1">
+                                View Details
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Intune Architecture -->
+                <div class="glass rounded-xl overflow-hidden border border-slate-800 hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="font-mono text-6xl text-slate-700 group-hover:text-blue-500/20 transition-colors">INTUNE</div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30">Production</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Zero Trust Endpoint Compliance</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            Architected and implemented device compliance framework in Microsoft Intune enforcing organizational security baselines. Configured conditional access policies requiring compliant devices for resource access, integrating with Entra ID for seamless identity-verified endpoint management across hybrid workforce.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Microsoft Intune</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Conditional Access</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Device Compliance</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Windows 10/11</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <span class="text-xs text-slate-500">Endpoint Security</span>
+                            <button onclick="showProjectDetails('intune')" class="text-accent hover:text-accentHover text-sm font-medium flex items-center gap-1">
+                                View Details
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Zero Trust Model -->
+                <div class="glass rounded-xl overflow-hidden border border-slate-800 hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="font-mono text-6xl text-slate-700 group-hover:text-emerald-500/20 transition-colors">ZTN</div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">Architecture</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Zero Trust Implementation Framework</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            Developed comprehensive Zero Trust architecture roadmap for SME environment, implementing "Never Trust, Always Verify" principles across identity, device, and network layers. Established phased migration strategy from perimeter-based security to identity-centric security model using Microsoft security stack.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Zero Trust</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Entra ID P2</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">Risk Policies</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800 rounded text-slate-400">MFA</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <span class="text-xs text-slate-500">Security Architecture</span>
+                            <button onclick="showProjectDetails('zerotrust')" class="text-accent hover:text-accentHover text-sm font-medium flex items-center gap-1">
+                                View Details
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 bg-primary">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Certifications & Credentials</h2>
+                <p class="text-slate-400">Continuous learning and professional development</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Current Cert -->
+                <div class="glass rounded-xl p-6 border border-slate-800 flex items-start gap-4">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-white font-semibold text-lg">Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)</h3>
+                            <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded border border-emerald-500/30">Active</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-2">Microsoft</p>
+                        <p class="text-slate-500 text-sm">Foundational understanding of security, compliance, and identity concepts across cloud-based and related Microsoft services.</p>
+                    </div>
+                </div>
+
+                <!-- In Progress -->
+                <div class="glass rounded-xl p-6 border border-slate-800 flex items-start gap-4 opacity-75">
+                    <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-white font-semibold text-lg">Microsoft Certified: Identity and Access Administrator Associate (SC-300)</h3>
+                            <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded border border-yellow-500/30">In Progress</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-2">Microsoft</p>
+                        <p class="text-slate-500 text-sm">Designing, implementing, and operating an organization's identity and access management systems using Entra ID.</p>
+                    </div>
+                </div>
+
+                <!-- Planned -->
+                <div class="glass rounded-xl p-6 border border-slate-800 flex items-start gap-4 opacity-50">
+                    <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-white font-semibold text-lg">CompTIA Security+</h3>
+                            <span class="px-2 py-1 bg-slate-700 text-slate-400 text-xs rounded border border-slate-600">Planned 2025</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-2">CompTIA</p>
+                        <p class="text-slate-500 text-sm">Core security functions and IT security concepts including threats, vulnerabilities, and risk management.</p>
+                    </div>
+                </div>
+
+                <!-- Planned -->
+                <div class="glass rounded-xl p-6 border border-slate-800 flex items-start gap-4 opacity-50">
+                    <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-white font-semibold text-lg">Microsoft Certified: Endpoint Administrator Associate (MD-102)</h3>
+                            <span class="px-2 py-1 bg-slate-700 text-slate-400 text-xs rounded border border-slate-600">Planned 2025</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-2">Microsoft</p>
+                        <p class="text-slate-500 text-sm">Deploying, configuring, protecting, managing, and monitoring devices and client applications in Microsoft 365 environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-secondary/30 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid opacity-30"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Connect</h2>
+                <p class="text-slate-400">Open to Identity & Endpoint Security Engineering opportunities</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8 md:p-12 border border-slate-800">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <a href="mailto: mr.abhishek.8626@gmail.com" class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors group">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-slate-400 text-sm">Email</div>
+                                    <div class="text-white font-medium">mr.abhishek.8626@gmail.com</div>
+                                </div>
+                            </a>
+
+                            <a href="https://linkedin.com/in/abhishek8626" target="_blank" class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors group">
+                                <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                                    <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-slate-400 text-sm">LinkedIn</div>
+                                    <div class="text-white font-medium">Click here </div>
+                                </div>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1sawA0x2lZPLaeyu4eesvF_rAJRzbRx94/view" target="_blank" class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors group border border-dashed border-slate-700 hover:border-accent">
+                                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                                    <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-slate-400 text-sm">Resume</div>
+                                    <div class="text-white font-medium">Download CV (PDF)</div>
+                                    <div class="text-white font-medium">Click here</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center">
+                        <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-800">
+                            <h4 class="text-white font-semibold mb-4">Current Status</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                                    <span class="text-slate-300 text-sm">Open to full-time opportunities</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                                    <span class="text-slate-300 text-sm">Available for security consulting</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                                    <span class="text-white-500 text-sm">Available for relocation</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-slate-800">
+                                <p class="text-slate-400 text-sm italic">
+                                    "Looking to contribute to security-conscious organizations implementing modern identity and endpoint protection strategies."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-slate-800 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+               
+                <span class="text-slate-500 text-sm">© 2025</span>
+            </div>
+            <div class="text-slate-600 text-sm">
+                Built with security in mind. No trackers. No cookies.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-slate-900/90 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-slate-700">
+                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                            <h3 class="text-2xl leading-6 font-bold text-white mb-4" id="modal-title">Project Details</h3>
+                            <div class="mt-2">
+                                <p class="text-slate-400" id="modal-content">
+                                    Loading...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse border-t border-slate-800">
+                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-accent text-base font-medium text-white hover:bg-accentHover focus:outline-none sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach((section) => {
+            section.style.opacity = '0';
